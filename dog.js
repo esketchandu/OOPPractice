@@ -1,4 +1,4 @@
-const Animal = require('./animal');
+const { Animal } = require('./animal');
 
 class Dog extends Animal{
   constructor(name, breed, age, color, noiseType){
@@ -15,11 +15,19 @@ class Dog extends Animal{
   getName(){
     return(`The name of the dog is ${this.name}.`);
    }
-}
 
+ }
+
+
+
+
+module.exports = { Dog };
+
+Animal.Dog = Dog; // Assigning Dog class to Animal.Dog property
 const dogOne = new Dog('Mcale', 'German Shepherd', 5, 'Brown', 'Wowwww')
-console.log(dogOne.makeSound());
-console.log(dogOne.getName());
-console.log(dogOne.getBreed());
 
-module.exports = Dog;
+// console.log(dogOne.makeSound());
+// console.log(dogOne.getName());
+// console.log(dogOne.getBreed());
+//console.log(Animal.animalBehav(dogOne));
+Animal.animalBehav(new Animal.Dog())

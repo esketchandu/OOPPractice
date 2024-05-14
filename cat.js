@@ -1,15 +1,15 @@
-const Animal = require('./animal');
+const { Animal } = require('./animal');
 
 class Cat extends Animal{
-  constructor(name, breed, age, color, noisteType){
+  constructor(name, breed, age, color, noiseType){
     super(name, breed);
     this.age = age;
     this.color = color;
-    this.noisteType = noisteType;
+    this.noiseType = noiseType;
   }
 
   makeSound(){
-    return(`${this.name} of ${this.breed} type makes ${this.noisteType} noise.`)
+    return(`${this.name} of ${this.breed} type makes ${this.noiseType} noise.`)
   }
 
   getColor(){
@@ -18,9 +18,17 @@ class Cat extends Animal{
 
 }
 
-const catOne = new Cat('Wuro', 'Local', '3', 'white', 'myaw')
+
+module.exports = { Cat };
+
+Animal.Cat = Cat; // Assigning Cat class to Animal.Cat property
+//console.log(Animal.Cat) // Output:[class Cat extends Animal]
+//console.log(Cat) // Output: [class Cat extends Animal]
+const catOne = new Cat('Wuro', 'Local', '3', 'white', 'myaw');
+
 console.log(catOne.makeSound());
 console.log(catOne.getColor());
 console.log(catOne.getBreed());
+console.log(Animal.animalBehav(catOne));
 
-module.exports = Cat;
+//Animal.animalBehav(new Animal.Cat());
