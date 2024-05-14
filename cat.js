@@ -30,5 +30,4 @@ console.log(catOne.makeSound());
 console.log(catOne.getColor());
 console.log(catOne.getBreed());
 console.log(Animal.animalBehav(catOne));
-
-//Animal.animalBehav(new Animal.Cat());
+//Animal.animalBehav(new Animal.Cat()); // Output: the same as console.log(Animal.animalBehav(catOne))
