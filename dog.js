@@ -29,5 +29,5 @@ const dogOne = new Dog('Mcale', 'German Shepherd', 5, 'Brown', 'Wowwww')
 console.log(dogOne.makeSound());
 console.log(dogOne.getName());
 console.log(dogOne.getBreed());
-console.log(Animal.animalBehav(dogOne));
+//console.log(Animal.animalBehav(dogOne));
 //Animal.animalBehav(new Animal.Dog()) // Output: the same as console.log(Animal.animalBehav(dogOne))
